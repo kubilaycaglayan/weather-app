@@ -8,6 +8,13 @@ const weather = async function weather(cityName = 'Ankara') {
     const resultTemp = parseInt((result.main.temp - 273.15), 10);
     data.temp = resultTemp;
     data.fah = parseInt((resultTemp * 1.8 + 32), 10);
+
+    data.tempMin = parseInt((result.main.temp_min - 273.15), 10);
+    data.tempMinFah = parseInt((data.tempMin * 1.8 + 32), 10);
+
+    data.tempMax = parseInt((result.main.temp_max - 273.15), 10);
+    data.tempMaxFah = parseInt((data.tempMax * 1.8 + 32), 10);
+    data.humidity = result.main.humidity;
     return resultTemp;
   };
 
@@ -15,12 +22,6 @@ const weather = async function weather(cityName = 'Ankara') {
     const resultName = result.name;
     data.name = resultName;
     return resultName;
-  };
-
-  const errorState = function errorState(err) {
-    data.name = 'Cannot find city.';
-    data.temp = `Please check the city name: ${cityName}`;
-    return data.name;
   };
 
   await fetch(url)

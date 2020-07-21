@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import './style.sass';
 import input from './input';
 import weather from './weatherApi';
@@ -11,7 +12,7 @@ let timeOut;
 
 inputField.oninput = () => {
   clearTimeout(timeOut);
-  waitAndShow(getInputAndShowWeather)
+  waitAndShow(getInputAndShowWeather);
 };
 
 function waitAndShow(callback) {
@@ -37,14 +38,14 @@ function getInputAndShowWeather() {
 async function showWeather(inputValue) {
   await weather(inputValue)
     .then(
-      (response) => {
+      () => {
         errorHandler().hide();
-        table().populate(response);
+        table().populate();
         loading().hide();
       },
     )
     .catch(
-      (err) => {
+      () => {
         table().hide();
         errorHandler().show();
         loading().hide();
