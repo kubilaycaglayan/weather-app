@@ -33,13 +33,6 @@ const weather = async function weather(cityName = 'Ankara') {
         name();
         temp();
       },
-    )
-    .catch(
-      (err) => {
-        //console.log('Having errors...');
-        //console.log(err);
-        errorState(err);
-      },
     );
   localStorage.setItem('weatherSome', JSON.stringify(data));
   return data;

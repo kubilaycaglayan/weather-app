@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <h1>Welcome To The Weather App</h1>
+  <i id="spinner" class="far fa-snowflake"></i>
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
 
     <label id="celsius" class="btn btn-secondary active">
@@ -36,6 +38,8 @@
       </tr>
     </tbody>
   </table>
+
+  <div id="error">City cannot found...</div>
   <script src="./main.js"></script>
 </body>
 </html>

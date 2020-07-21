@@ -1,3 +1,13 @@
+@keyframes spinning
+  0%
+    transform: rotate(0deg)
+    opacity: 1
+  50%
+    opacity: 0.3
+  100%
+    transform: rotate(360deg)
+    opacity: 1
+
 body
   padding-top: 15%
   h1
@@ -5,3 +15,11 @@ body
   text-align: center
   table
     margin-top: 15%
+  #error
+    display: none
+  #spinner
+    animation-name: spinning
+    animation-duration: 2s
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+    display: none
