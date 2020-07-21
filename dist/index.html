@@ -8,9 +8,20 @@
 </head>
 <body>
   <h1>Welcome To The Weather App</h1>
-  <form action="">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+    <label id="celsius" class="btn btn-secondary active">
+      <input type="radio" name="options" id="celsius-input"> Celsius
+    </label>
+
+    <label id="fahrenheit" class="btn btn-secondary">
+      <input type="radio" name="options" id="fahrenheit-input"> Fahrenheit
+    </label>
+
+  </div>
+
     <input id="input" type="text">
-  </form>
+
   <table class="table">
     <thead>
       <tr>

@@ -2,25 +2,40 @@ import './style.sass';
 import input from './input';
 import weather from './weatherApi';
 import table from './tableBuilder';
+import './unit';
 
 const inputField = document.getElementById('input');
+let timeOut;
+
 inputField.oninput = () => {
-  const inputValue = String(input().value).trim();
-  if (inputValue.length > 4) {
-    howIsTheWeather(inputValue)
-  }
+  clearTimeout(timeOut);
+  waitAndShow(getInputAndShowWeather)
 };
 
-async function howIsTheWeather(inputValue) {
-  const data = await weather(inputValue).data;
-  console.log('onclick action', data, data.name)
-  table().populate(data);
+function waitAndShow(callback) {
+  clearTimeout(timeOut);
+  timeOut = setTimeout(
+    () => { callback(); },
+    600,
+  );
 }
 
-/* const dummyData = {
-  temp: 45,
-  name: 'Simerniya',
-};
+function getInput() {
+  return String(input().value).trim();
+}
 
-table().populate(dummyData);
-table().remove() */
+function getInputAndShowWeather() {
+  const inputValue = getInput();
+  if (inputValue.length > 2) {
+    showWeather(inputValue);
+  }
+}
+
+async function showWeather(inputValue) {
+  await weather(inputValue)
+    .then(
+      (response) => {
+        table().populate(response);
+      },
+    );
+}
