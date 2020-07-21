@@ -6,6 +6,7 @@ import table from './tableBuilder';
 import './unit';
 import errorHandler from './errorHandler';
 import loading from './loading';
+import mood from './mood';
 
 const inputField = document.getElementById('input');
 let timeOut;
@@ -17,6 +18,7 @@ inputField.oninput = () => {
 
 function waitAndShow(callback) {
   loading().show();
+  mood().decide('loading');
   clearTimeout(timeOut);
   timeOut = setTimeout(
     () => { callback(); },
@@ -38,7 +40,8 @@ function getInputAndShowWeather() {
 async function showWeather(inputValue) {
   await weather(inputValue)
     .then(
-      () => {
+      (response) => {
+        mood().decide(response.temp);
         errorHandler().hide();
         table().populate();
         loading().hide();

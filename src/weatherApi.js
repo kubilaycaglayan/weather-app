@@ -4,7 +4,7 @@ const weather = async function weather(cityName = 'Ankara') {
   let result;
   const data = {};
 
-  const temp = function temp() {
+  const destructure = function destructure() {
     const resultTemp = parseInt((result.main.temp - 273.15), 10);
     data.temp = resultTemp;
     data.fah = parseInt((resultTemp * 1.8 + 32), 10);
@@ -15,13 +15,9 @@ const weather = async function weather(cityName = 'Ankara') {
     data.tempMax = parseInt((result.main.temp_max - 273.15), 10);
     data.tempMaxFah = parseInt((data.tempMax * 1.8 + 32), 10);
     data.humidity = result.main.humidity;
-    return resultTemp;
-  };
-
-  const name = function name() {
-    const resultName = result.name;
-    data.name = resultName;
-    return resultName;
+    data.weather = result.weather[0].main;
+    data.name = result.name;
+    data.coord = result.coord;
   };
 
   await fetch(url)
@@ -31,8 +27,7 @@ const weather = async function weather(cityName = 'Ankara') {
     .then(
       (response) => {
         result = response;
-        name();
-        temp();
+        destructure();
       },
     );
   localStorage.setItem('weatherSome', JSON.stringify(data));
