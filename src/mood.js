@@ -19,13 +19,13 @@ const mood = function mood() {
   }
 
   function notFound() {
-    changeSymbol('fas fa-question');
+    changeSymbol('fas fa-question text-danger');
   }
 
   // eslint-disable-next-line no-unused-vars
   const weatherList = {
     Clear: 'far fa-sun text-warning',
-    Clouds: 'fas fa-cloud text-secondary',
+    Clouds: 'fas fa-cloud',
     Rain: 'fas fa-cloud-rain text-primary',
     Snow: 'fas fa-snowflake text-white',
   };
