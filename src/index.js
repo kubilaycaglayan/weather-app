@@ -19,7 +19,6 @@ inputField.oninput = () => {
 function waitAndShow(callback) {
   loading().show();
   errorHandler().hide();
-  mood().decide('loading');
   clearTimeout(timeOut);
   timeOut = setTimeout(
     () => { callback(); },
@@ -42,7 +41,7 @@ async function showWeather(inputValue) {
   await weather(inputValue)
     .then(
       (response) => {
-        mood().decide(response.temp);
+        mood().decide(response.weather);
         errorHandler().hide();
         loading().hide();
         card().populate();

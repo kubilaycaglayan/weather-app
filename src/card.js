@@ -3,6 +3,7 @@ const card = function card() {
   const tempField = document.getElementById('temp');
   const minField = document.getElementById('min');
   const maxField = document.getElementById('max');
+  const weatherField = document.getElementById('weather');
   const humField = document.getElementById('hum');
   const celsiusInput = document.getElementById('celsius-input');
   const card = document.getElementsByClassName('card')[0];
@@ -22,22 +23,23 @@ const card = function card() {
     return JSON.parse(localStorage.getItem('weatherSome'));
   }
 
-  function fill(temp, tempMin, tempMax, humidity) {
+  function fill(temp, tempMin, tempMax, humidity, weather) {
     tempField.innerHTML = temp;
     minField.innerHTML = tempMin;
     maxField.innerHTML = tempMax;
+    weatherField.innerHTML = weather;
     humField.innerHTML = humidity;
   }
 
   const populate = function populate() {
     const {
-      name, temp, fah, tempMin, tempMinFah, tempMax, tempMaxFah, humidity,
+      name, temp, fah, tempMin, tempMinFah, tempMax, tempMaxFah, humidity, weather,
     } = getData();
     nameField.innerHTML = name;
     if (celsiusInput.checked) {
-      fill(temp, tempMin, tempMax, humidity);
+      fill(temp, tempMin, tempMax, humidity, weather);
     } else {
-      fill(fah, tempMinFah, tempMaxFah, humidity);
+      fill(fah, tempMinFah, tempMaxFah, humidity, weather);
     }
     show();
   };

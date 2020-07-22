@@ -12,8 +12,12 @@
     <div class="row">
       <div class="col-md-6 input d-flex flex-column">
         <div class="only-title">
-          <i class="fas fa-cloud-sun-rain"></i>
-          <h2>Weather Reports</h2>
+          <div class="symbols">
+            <i></i>
+            <i class="fas fa-cloud-sun-rain"></i>
+            <i></i>
+          </div>
+          <h2>Weather Report</h2>
         </div>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label id="celsius" class="btn btn-primary active">
@@ -34,6 +38,7 @@
               <div class="min"><i class="fas fa-angle-down"></i> <span id="min"></span> <span class="degree">°</span> </div>
               <div class="max"> <i class="fas fa-angle-up"></i><span id="max"></span> <span class="degree">°</span> </div>
             </div>
+            <div class="weather"><span id="weather"></span></div>
             <div class="hum"><i class="fas fa-tint"></i><span id="hum"></span><i class="fas fa-percentage"></i> </div>
 
           </div>

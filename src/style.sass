@@ -2,19 +2,50 @@
   0%
     transform: rotate(0deg)
     opacity: 1
+  40%
+    opacity: 0.8
   50%
     opacity: 0.3
+  60%
+    opacity: 0.8
   100%
     transform: rotate(360deg)
     opacity: 1
 
+@keyframes go_left
+  0%
+    font-size: 2em
+    position: relative
+  25%
+    position: relative
+    left: 0
+    font-size: 1em
+  100%
+    position: relative
+    left: -1500px
+    font-size: 0.5em
+
+@keyframes come_from_right
+  0%
+    font-size: 0.5em
+    position: relative
+    right: -1500px
+  25%
+    right: 17px
+    font-size: 1em
+  100%
+    right: 17px
+    position: relative
+    font-size: 2em
+
 body
   background-image: url(https://www.channelfutures.com/files/2013/02/atmosphere-clouds_0.jpg)
   background-size: cover
+  background-position-y: 100%
+  height: 100vh
   user-select: none
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   background-color: #5c92eb
-  padding: 1%
   text-align: center
   .only-title
     color: #0d4480
@@ -68,6 +99,11 @@ body
           padding-left: 5px
   #error
     display: none
+    font-size: 1.3em
+    background-color: #ffffff78
+    border-radius: 5px
+    width: 300px
+    margin: 0 auto
   #spinner
     margin: 0 auto
     animation-name: spinning
@@ -77,7 +113,7 @@ body
     position: absolute
     font-size: 10em
     top: 25%
-    color: #1f66b1
+    color: #1b497e
   .input
     padding: 0
     width: 300px
@@ -105,3 +141,10 @@ body
     bottom: 5px
     right: 15px
     font-size: 0.5em
+
+.go-left
+  animation-name: go_left
+  animation-duration: 3s
+.come-from-right
+  animation-name: come_from_right
+  animation-duration: 3s

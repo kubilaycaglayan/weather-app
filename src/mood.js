@@ -1,40 +1,78 @@
+/* eslint-disable no-use-before-define */
 const mood = function mood() {
-  const body = document.getElementsByTagName('body')[0];
+  let symbols;
 
   function sunny() {
-    body.style.backgroundColor = 'yellow';
+    changeSymbol(weatherList.Clear);
   }
 
   function snowy() {
-    body.style.backgroundColor = 'white';
+    changeSymbol(weatherList.Snow);
+  }
+
+  function rainy() {
+    changeSymbol(weatherList.Rain);
   }
 
   function cloudy() {
-    body.style.backgroundColor = 'gray';
+    changeSymbol(weatherList.Clouds);
   }
 
   function loading() {
-    body.style.backgroundColor = 'green';
+    changeSymbol('fas fa-question');
   }
 
   // eslint-disable-next-line no-unused-vars
-  const weatherList = [
-    'Clear',
-    'Clouds',
-  ];
+  const weatherList = {
+    Clear: 'far fa-sun text-warning',
+    Clouds: 'fas fa-cloud text-secondary',
+    Rain: 'fas fa-cloud-rain text-primary',
+    Snow: 'fas fa-snowflake text-white',
+  };
 
-  const decide = function decide(temp) {
-    // console.log('mood temp:', temp, weather);
-    if (temp === 'loading') {
-      loading();
-    } else if (temp < 10) {
-      snowy();
-    } else if (temp > 9 && temp < 25) {
-      cloudy();
-    } else {
-      sunny();
+  const decide = function decide(weather) {
+    switch (weather) {
+      case 'loading':
+        loading();
+        break;
+      case 'Clouds':
+        cloudy();
+        break;
+      case 'Rain':
+        rainy();
+        break;
+      case 'Snow':
+        snowy();
+        break;
+      default:
+        sunny();
+        break;
     }
   };
+
+  function changeSymbol(className) {
+    goLeft();
+    bringFromRight(className);
+  }
+
+  function goLeft() {
+    symbols = document.querySelectorAll('.symbols i');
+    symbols[0].remove();
+    symbols[1].className += ' go-left';
+    setTimeout(() => {
+      symbols[1].style.display = 'none';
+      symbols[1].className = '';
+    }, 3000);
+    document.getElementsByClassName('symbols')[0].appendChild(document.createElement('i'));
+  }
+
+  function bringFromRight(className = 'fas fa-cloud-sun-rain text-success') {
+    const animatedClassName = `${className} come-from-right`;
+    symbols[2].className += animatedClassName;
+    setTimeout(() => {
+      symbols[2].className = className;
+    }, 3000);
+  }
 
   return {
     decide,
