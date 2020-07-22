@@ -16,11 +16,11 @@
           <h2>Weather Reports</h2>
         </div>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label id="celsius" class="btn btn-secondary active">
-            <input type="radio" name="options" id="celsius-input"> Celsius
+          <label id="celsius" class="btn btn-primary active">
+            <input type="radio" name="options" id="celsius-input"> Celsius (C°)
           </label>
-          <label id="fahrenheit" class="btn btn-secondary">
-            <input type="radio" name="options" id="fahrenheit-input"> Fahrenheit
+          <label id="fahrenheit" class="btn btn-primary">
+            <input type="radio" name="options" id="fahrenheit-input"> Fahrenheit (F°)
           </label>
         </div>
         <input id="input" type="text"  placeholder="Please enter city name..." spellcheck="false" autocomplete="off">
@@ -34,13 +34,14 @@
               <div class="min"><i class="fas fa-angle-down"></i> <span id="min"></span> <span class="degree">°</span> </div>
               <div class="max"> <i class="fas fa-angle-up"></i><span id="max"></span> <span class="degree">°</span> </div>
             </div>
-            <div class="hum"><i class="fas fa-tint"></i><span  id="hum"></span><i class="fas fa-percentage"></i> </div>
+            <div class="hum"><i class="fas fa-tint"></i><span id="hum"></span><i class="fas fa-percentage"></i> </div>
 
           </div>
 
           <i id="spinner" class="far fa-snowflake"></i>
       </div>
     </div>
+    <div class="openweather">Powered by OpenWeather</div>
   </div>
 
   <div id="error">City cannot found...</div>

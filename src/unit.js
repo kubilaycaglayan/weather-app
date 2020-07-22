@@ -27,8 +27,8 @@
 
   function activateFahrenheit() {
     if (celsiusInput.checked) {
-      fahrenheitButton.className = 'btn btn-secondary active';
-      celsiusButton.className = 'btn btn-secondary';
+      fahrenheitButton.className = 'btn btn-primary active';
+      celsiusButton.className = 'btn btn-primary';
       celsiusInput.checked = false;
       switchUnitIfExists(false, getData());
     }
@@ -36,8 +36,8 @@
 
   function activateCelsius() {
     if (!celsiusInput.checked) {
-      celsiusButton.className = 'btn btn-secondary active';
-      fahrenheitButton.className = 'btn btn-secondary';
+      celsiusButton.className = 'btn btn-primary active';
+      fahrenheitButton.className = 'btn btn-primary';
       celsiusInput.checked = true;
       switchUnitIfExists(true, getData());
     }

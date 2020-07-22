@@ -26,7 +26,7 @@ const card = function card() {
     tempField.innerHTML = temp;
     minField.innerHTML = tempMin;
     maxField.innerHTML = tempMax;
-    humField.innnerHTML = humidity;
+    humField.innerHTML = humidity;
   }
 
   const populate = function populate() {

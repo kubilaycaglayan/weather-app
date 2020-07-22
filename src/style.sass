@@ -9,12 +9,16 @@
     opacity: 1
 
 body
+  background-image: url(https://www.channelfutures.com/files/2013/02/atmosphere-clouds_0.jpg)
+  background-size: cover
+  user-select: none
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   background-color: #5c92eb
   padding: 1%
   text-align: center
   .only-title
-    font-size: 2em
+    color: #0d4480
+    font-size: 3em
     i
       font-size: 2em
   .card
@@ -33,15 +37,16 @@ body
       width: 300px
       padding-top: 1em
       display: none
-      background-color: #ffffff5e
+      background-color: #ffffff91
       border-radius: 5%
       user-select: none
       height: 50vh
       visibility: hidden
+      font-weight: bolder
       .degree
         padding: 0
       .name
-        font-size: 1.3em
+        font-size: 1.8em
         #name
           font-size: 1em
       .temp
@@ -70,8 +75,9 @@ body
     animation-iteration-count: infinite
     animation-timing-function: linear
     position: absolute
-    font-size: 7em
+    font-size: 10em
     top: 25%
+    color: #1f66b1
   .input
     padding: 0
     width: 300px
@@ -92,6 +98,10 @@ body
       outline: none
       font-size: 1.4em
       background-color: #ffffff5b
-      spell
-
-
+      text-transform: capitalize
+  .openweather
+    color: white
+    position: fixed
+    bottom: 5px
+    right: 15px
+    font-size: 0.5em
