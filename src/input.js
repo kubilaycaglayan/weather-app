@@ -1,7 +1,12 @@
 const input = function input() {
   const { value } = document.getElementById('input');
+
+  function get() {
+    return String(value).trim();
+  }
+
   return {
-    value,
+    get,
   };
 };
 

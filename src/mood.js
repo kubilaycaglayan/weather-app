@@ -18,7 +18,7 @@ const mood = function mood() {
     changeSymbol(weatherList.Clouds);
   }
 
-  function loading() {
+  function notFound() {
     changeSymbol('fas fa-question');
   }
 
@@ -32,9 +32,6 @@ const mood = function mood() {
 
   const decide = function decide(weather) {
     switch (weather) {
-      case 'loading':
-        loading();
-        break;
       case 'Clouds':
         cloudy();
         break;
@@ -76,6 +73,7 @@ const mood = function mood() {
 
   return {
     decide,
+    notFound,
   };
 };
 

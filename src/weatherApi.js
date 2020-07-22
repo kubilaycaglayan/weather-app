@@ -1,10 +1,9 @@
 const weather = async function weather(cityName = 'Ankara') {
   const key = 'e6efdefd05fcd6a7ba813bc6ce304518';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`;
-  let result;
   const data = {};
 
-  const destructure = function destructure() {
+  const destructure = function destructure(result) {
     const resultTemp = parseInt((result.main.temp - 273.15), 10);
     data.temp = resultTemp;
     data.fah = parseInt((resultTemp * 1.8 + 32), 10);
@@ -14,6 +13,7 @@ const weather = async function weather(cityName = 'Ankara') {
 
     data.tempMax = parseInt((result.main.temp_max - 273.15), 10);
     data.tempMaxFah = parseInt((data.tempMax * 1.8 + 32), 10);
+
     data.humidity = result.main.humidity;
     data.weather = result.weather[0].main;
     data.name = result.name;
@@ -26,10 +26,10 @@ const weather = async function weather(cityName = 'Ankara') {
     )
     .then(
       (response) => {
-        result = response;
-        destructure();
+        destructure(response);
       },
     );
+
   localStorage.setItem('weatherSome', JSON.stringify(data));
   return data;
 };

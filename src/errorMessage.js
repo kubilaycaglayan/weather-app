@@ -1,4 +1,4 @@
-const errorHandler = function errorHandler() {
+const errorMessage = function errorMessage() {
   const errorElement = document.getElementById('error');
 
   function show() {
@@ -15,4 +15,4 @@ const errorHandler = function errorHandler() {
   };
 };
 
-export default errorHandler;
+export default errorMessage;

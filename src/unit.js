@@ -10,18 +10,26 @@
     return JSON.parse(localStorage.getItem('weatherSome'));
   }
 
-  function switchUnitIfExists(boolean, data) {
+  function setCelsius(data) {
+    tempField.innerHTML = data.temp;
+    minField.innerHTML = data.tempMin;
+    maxField.innerHTML = data.tempMax;
+  }
+
+  function setFahrenheit(data) {
+    tempField.innerHTML = data.fah;
+    minField.innerHTML = data.tempMinFah;
+    maxField.innerHTML = data.tempMaxFah;
+  }
+
+  function switchUnitIfExists(isCelsius, data) {
     if (!parseInt(tempField.innerHTML, 10)) {
       return;
     }
-    if (boolean) {
-      tempField.innerHTML = data.temp;
-      minField.innerHTML = data.tempMin;
-      maxField.innerHTML = data.tempMax;
+    if (isCelsius) {
+      setCelsius(data);
     } else {
-      tempField.innerHTML = data.fah;
-      minField.innerHTML = data.tempMinFah;
-      maxField.innerHTML = data.tempMaxFah;
+      setFahrenheit(data);
     }
   }
 
