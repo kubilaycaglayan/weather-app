@@ -1,4 +1,4 @@
-const errorMessage = function errorMessage() {
+const errorMessage = () => {
   const errorElement = document.getElementById('error');
 
   function show() {

@@ -39,7 +39,7 @@ Run npm install to make local changes
 In the project directory run:
 - `npm install`
 After this command you may make changes and after every change run:
-- `npm watch` to compile files into distribution folder.
+- `npm run build` to compile files into distribution folder.
 
 ### Prerequisites
 

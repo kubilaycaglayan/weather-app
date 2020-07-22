@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-const loading = function loading() {
+const loading = () => {
   const spinner = document.getElementById('spinner');
   const card = document.getElementsByClassName('card')[0];
   const result = document.getElementsByClassName('result')[0];

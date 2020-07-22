@@ -3,7 +3,7 @@ const weather = async function weather(cityName = 'Ankara') {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`;
   const data = {};
 
-  const destructure = function destructure(result) {
+  const destructure = (result) => {
     const resultTemp = parseInt((result.main.temp - 273.15), 10);
     data.temp = resultTemp;
     data.fah = parseInt((resultTemp * 1.8 + 32), 10);

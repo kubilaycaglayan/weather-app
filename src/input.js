@@ -1,4 +1,4 @@
-const input = function input() {
+const input = () => {
   const { value } = document.getElementById('input');
 
   function get() {

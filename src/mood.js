@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-const mood = function mood() {
+const mood = () => {
   let symbols;
 
   function sunny() {
@@ -30,7 +30,7 @@ const mood = function mood() {
     Snow: 'fas fa-snowflake text-white',
   };
 
-  const decide = function decide(weather) {
+  const decide = (weather) => {
     switch (weather) {
       case 'Clouds':
         cloudy();

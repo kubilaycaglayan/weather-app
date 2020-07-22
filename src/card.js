@@ -1,4 +1,4 @@
-const card = function card() {
+const card = () => {
   const nameField = document.getElementById('name');
   const tempField = document.getElementById('temp');
   const minField = document.getElementById('min');
@@ -9,15 +9,15 @@ const card = function card() {
   const card = document.getElementsByClassName('card')[0];
   const result = document.getElementsByClassName('result')[0];
 
-  const hide = function hide() {
+  function hide() {
     card.style.display = 'none';
     result.style.visibility = 'hidden';
-  };
+  }
 
-  const show = function show() {
+  function show() {
     card.style.display = 'flex';
     result.style.visibility = 'visible';
-  };
+  }
 
   function getData() {
     return JSON.parse(localStorage.getItem('weatherSome'));
@@ -31,7 +31,7 @@ const card = function card() {
     humField.innerHTML = humidity;
   }
 
-  const populate = function populate() {
+  function populate() {
     const {
       name, temp, fah, tempMin, tempMinFah, tempMax, tempMaxFah, humidity, weather,
     } = getData();
@@ -42,7 +42,7 @@ const card = function card() {
       fill(fah, tempMinFah, tempMaxFah, humidity, weather);
     }
     show();
-  };
+  }
 
   return {
     populate,
