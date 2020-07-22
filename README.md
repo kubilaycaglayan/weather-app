@@ -4,7 +4,7 @@ You can learn the weather reports by typing the city.
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://rawcdn.githack.com/kubilaycaglayan/weather-app/7005b893d1a36b916d0adaff6976155edcf4ef15/dist/index.html)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60448833/88192695-82f31580-cc45-11ea-896d-5c7ca3f0348d.gif">
@@ -14,10 +14,11 @@ You can learn the weather reports by typing the city.
 
 - HTML
 - CSS
-- JAVASCRIPT
-- WEBPACK
-- BOOTSTRAP
+- JavaScript
+- Webpack
+- Bootstrap
 - SASS
+- WeatherApp
 
 ## Getting Started
 
