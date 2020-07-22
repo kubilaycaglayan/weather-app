@@ -2,7 +2,7 @@
 import './style.sass';
 import input from './input';
 import weather from './weatherApi';
-import table from './tableBuilder';
+import card from './card';
 import './unit';
 import errorHandler from './errorHandler';
 import loading from './loading';
@@ -18,6 +18,7 @@ inputField.oninput = () => {
 
 function waitAndShow(callback) {
   loading().show();
+  errorHandler().hide();
   mood().decide('loading');
   clearTimeout(timeOut);
   timeOut = setTimeout(
@@ -43,15 +44,15 @@ async function showWeather(inputValue) {
       (response) => {
         mood().decide(response.temp);
         errorHandler().hide();
-        table().populate();
         loading().hide();
+        card().populate();
       },
     )
     .catch(
       () => {
-        table().hide();
-        errorHandler().show();
         loading().hide();
+        card().hide();
+        errorHandler().show();
       },
     );
 }

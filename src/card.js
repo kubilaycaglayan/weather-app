@@ -1,18 +1,21 @@
-const table = function table() {
+const card = function card() {
   const nameField = document.getElementById('name');
   const tempField = document.getElementById('temp');
   const minField = document.getElementById('min');
   const maxField = document.getElementById('max');
   const humField = document.getElementById('hum');
   const celsiusInput = document.getElementById('celsius-input');
-  const tableElement = document.getElementsByTagName('table')[0];
+  const card = document.getElementsByClassName('card')[0];
+  const result = document.getElementsByClassName('result')[0];
 
   const hide = function hide() {
-    tableElement.style.display = 'none';
+    card.style.display = 'none';
+    result.style.visibility = 'hidden';
   };
 
   const show = function show() {
-    tableElement.style.display = 'table';
+    card.style.display = 'flex';
+    result.style.visibility = 'visible';
   };
 
   function getData() {
@@ -45,4 +48,4 @@ const table = function table() {
   };
 };
 
-export default table;
+export default card;

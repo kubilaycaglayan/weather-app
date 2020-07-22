@@ -8,48 +8,40 @@
   <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Welcome To The Weather App</h1>
-  <i id="spinner" class="far fa-snowflake"></i>
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 input d-flex flex-column">
+        <div class="only-title">
+          <i class="fas fa-cloud-sun-rain"></i>
+          <h2>Weather Reports</h2>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label id="celsius" class="btn btn-secondary active">
+            <input type="radio" name="options" id="celsius-input"> Celsius
+          </label>
+          <label id="fahrenheit" class="btn btn-secondary">
+            <input type="radio" name="options" id="fahrenheit-input"> Fahrenheit
+          </label>
+        </div>
+        <input id="input" type="text"  placeholder="Please enter city name..." spellcheck="false" autocomplete="off">
+      </div>
 
-    <label id="celsius" class="btn btn-secondary active">
-      <input type="radio" name="options" id="celsius-input"> Celsius
-    </label>
+      <div class="card col-md-6">
+          <div class="result d-flex flex-column justify-content-around">
+            <div class="name"><i class="far fa-flag"></i> <span id="name">San Francisco Province</span></div>
+            <div class="temp"> <span id="temp" ></span> <span class="degree">°</span> </div>
+            <div class="range d-flex justify-content-center">
+              <div class="min"><i class="fas fa-angle-down"></i> <span id="min"></span> <span class="degree">°</span> </div>
+              <div class="max"> <i class="fas fa-angle-up"></i><span id="max"></span> <span class="degree">°</span> </div>
+            </div>
+            <div class="hum"><i class="fas fa-tint"></i><span  id="hum"></span><i class="fas fa-percentage"></i> </div>
 
-    <label id="fahrenheit" class="btn btn-secondary">
-      <input type="radio" name="options" id="fahrenheit-input"> Fahrenheit
-    </label>
+          </div>
 
+          <i id="spinner" class="far fa-snowflake"></i>
+      </div>
+    </div>
   </div>
-
-    <input id="input" type="text">
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">City Name:</th>
-        <th id="name" scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Temperature</th>
-        <td id="temp"></td>
-      </tr>
-      <tr>
-        <th scope="row">Minimum:</th>
-        <td id="min"></td>
-      </tr>
-      <tr>
-        <th scope="row">Maximum:</th>
-        <td id="max"></td>
-      </tr>
-      <tr>
-        <th scope="row">Humidity</th>
-        <td id="hum"></td>
-      </tr>
-    </tbody>
-  </table>
 
   <div id="error">City cannot found...</div>
   <script src="./main.js"></script>
