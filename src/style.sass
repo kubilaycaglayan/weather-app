@@ -1,0 +1,168 @@
+@keyframes spinning
+  0%
+    transform: rotate(0deg)
+    opacity: 1
+  40%
+    opacity: 0.8
+  50%
+    opacity: 0.3
+  60%
+    opacity: 0.8
+  100%
+    transform: rotate(360deg)
+    opacity: 1
+
+@keyframes go_left
+  0%
+    font-size: 2em
+    position: relative
+  25%
+    position: relative
+    left: 0
+    font-size: 1em
+  100%
+    position: relative
+    left: -1500px
+    font-size: 0.5em
+
+@keyframes come_from_right
+  0%
+    font-size: 0.5em
+    position: relative
+    right: -1500px
+  25%
+    right: 17px
+    font-size: 1em
+  100%
+    right: 17px
+    position: relative
+    font-size: 2em
+
+body
+  overflow: hidden
+  background-image: url(https://images.unsplash.com/photo-1489515217757-5fd1be406fef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)
+  background-size: cover
+  background-position-y: 100%
+  height: 100vh
+  user-select: none
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  text-align: center
+  .only-title
+    color: #0d4480
+    font-size: 3em
+    i
+      font-size: 2em
+    .sub-title
+      background-color: #ffffffb0
+      width: 300px
+      margin: 0 auto
+  .btn
+    border-radius: 0
+  .symbols
+    background-color: #ffffff5e
+    width: 300px
+    margin: 0 auto
+    border-top-left-radius: 45px
+    border-top-right-radius: 45px
+  .card
+    display: none
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    padding: 0
+    border: none
+    background-color: #00000000
+    width: 300px
+    min-width: 300px
+    height: 50vh
+    margin: auto
+    .result
+      width: 300px
+      padding-top: 1em
+      display: none
+      background-color: #ffffff91
+      border-radius: 5%
+      user-select: none
+      height: 50vh
+      visibility: hidden
+      font-weight: bolder
+      .degree
+        padding: 0
+      .name
+        font-size: 1.8em
+        #name
+          font-size: 1em
+      .temp
+        font-size: 4em
+        #temp
+          padding-left: 14px
+      .min
+        font-size: 1.4em
+        padding-right: 10px
+      .max
+        font-size: 1.4em
+        padding-left: 10px
+        #max
+          padding-left: 5px
+      .hum
+        font-size: 1.4em
+        #hum
+          padding-right: 5px
+          padding-left: 5px
+  #error
+    display: none
+    font-size: 1.3em
+    background-color: #ffffff78
+    border-radius: 5px
+    width: 300px
+    margin: 0 auto
+  #spinner
+    margin: 0 auto
+    animation-name: spinning
+    animation-duration: 2s
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+    position: absolute
+    font-size: 10em
+    top: 25%
+    color: white
+  .input
+    padding: 0
+    width: 300px
+    margin: 10% auto
+    min-width: 300px
+    .btn-group
+      margin: 0 auto
+      width: 300px
+    input
+      margin: 0 auto
+      width: 300px
+      height: 4em
+      border: none
+      border-radius: 0
+      border-bottom-left-radius: 25px
+      border-bottom-right-radius: 25px
+      text-align: center
+      font-weight: bolder
+      outline: none
+      font-size: 1.4em
+      background-color: #ffffffa1
+      text-transform: capitalize
+      &::placeholder
+        color: #0D4480
+        opacity: 1
+  .openweather
+    color: white
+    position: fixed
+    bottom: 5px
+    right: 15px
+    font-size: 0.5em
+
+.go-left
+  animation-name: go_left
+  animation-duration: 3s
+.come-from-right
+  animation-name: come_from_right
+  animation-duration: 3s
+.fa-cloud
+  color: #2A2D2C
