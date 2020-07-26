@@ -55,6 +55,7 @@ import mood from './mood';
           errorMessage().hide();
           loading().hide();
           card().populate();
+          document.activeElement.blur();
         },
       )
       .catch(
