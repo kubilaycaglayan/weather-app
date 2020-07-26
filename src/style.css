@@ -44,69 +44,87 @@
 
 @-webkit-keyframes go_left {
   0% {
-    font-size: 2em;
-    position: relative;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    position: absolute;
+    left: 100px;
+    top: 30px;
   }
   25% {
-    position: relative;
-    left: 0;
-    font-size: 1em;
+    position: absolute;
+    left: 100px;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
-    position: relative;
+    position: absolute;
+    top: 30px;
     left: -1500px;
-    font-size: 0.5em;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
   }
 }
 
 @keyframes go_left {
   0% {
-    font-size: 2em;
-    position: relative;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    position: absolute;
+    left: 100px;
+    top: 30px;
   }
   25% {
-    position: relative;
-    left: 0;
-    font-size: 1em;
+    position: absolute;
+    left: 100px;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
-    position: relative;
+    position: absolute;
+    top: 30px;
     left: -1500px;
-    font-size: 0.5em;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
   }
 }
 
 @-webkit-keyframes come_from_right {
   0% {
-    font-size: 0.5em;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
     position: relative;
     right: -1500px;
   }
   25% {
-    right: 17px;
-    font-size: 1em;
+    right: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
-    right: 17px;
+    right: 0;
     position: relative;
-    font-size: 2em;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes come_from_right {
   0% {
-    font-size: 0.5em;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
     position: relative;
     right: -1500px;
   }
   25% {
-    right: 17px;
-    font-size: 1em;
+    right: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
-    right: 17px;
+    right: 0;
     position: relative;
-    font-size: 2em;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -146,11 +164,13 @@ body .btn {
 }
 
 body .symbols {
+  position: relative;
   background-color: #ffffff5e;
   width: 300px;
   margin: 0 auto;
   border-top-left-radius: 45px;
   border-top-right-radius: 45px;
+  height: 150px;
 }
 
 body .card {
