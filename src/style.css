@@ -128,6 +128,28 @@
   }
 }
 
+@-webkit-keyframes fade_in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 body {
   overflow: hidden;
   background-image: url(https://images.unsplash.com/photo-1489515217757-5fd1be406fef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
@@ -173,6 +195,11 @@ body .loading-page .spinner {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+}
+
+body .container-fluid {
+  visibility: hidden;
+  opacity: 0;
 }
 
 body .only-title {
@@ -382,6 +409,15 @@ body .openweather {
 .fade-out {
   -webkit-animation-name: fade_out;
           animation-name: fade_out;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.fade-in {
+  -webkit-animation-name: fade_in;
+          animation-name: fade_in;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;

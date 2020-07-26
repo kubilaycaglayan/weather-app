@@ -11,10 +11,12 @@ import mood from './mood';
 (function main() {
   const inputField = document.getElementById('input');
   const loadingPage = document.getElementsByClassName('loading-page')[0];
+  const containerFluid = document.getElementsByClassName('container-fluid')[0];
   let timeOut;
 
   window.onload = () => {
     loadingPage.className = 'loading-page fade-out';
+    containerFluid.className += ' fade-in';
     setTimeout(() => {
       loadingPage.style.display = 'none';
     }, 1000);
