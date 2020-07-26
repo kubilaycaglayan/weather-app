@@ -1,0 +1,390 @@
+@-webkit-keyframes spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes go_left {
+  0% {
+    font-size: 2em;
+    position: relative;
+  }
+  25% {
+    position: relative;
+    left: 0;
+    font-size: 1em;
+  }
+  100% {
+    position: relative;
+    left: -1500px;
+    font-size: 0.5em;
+  }
+}
+
+@keyframes go_left {
+  0% {
+    font-size: 2em;
+    position: relative;
+  }
+  25% {
+    position: relative;
+    left: 0;
+    font-size: 1em;
+  }
+  100% {
+    position: relative;
+    left: -1500px;
+    font-size: 0.5em;
+  }
+}
+
+@-webkit-keyframes come_from_right {
+  0% {
+    font-size: 0.5em;
+    position: relative;
+    right: -1500px;
+  }
+  25% {
+    right: 17px;
+    font-size: 1em;
+  }
+  100% {
+    right: 17px;
+    position: relative;
+    font-size: 2em;
+  }
+}
+
+@keyframes come_from_right {
+  0% {
+    font-size: 0.5em;
+    position: relative;
+    right: -1500px;
+  }
+  25% {
+    right: 17px;
+    font-size: 1em;
+  }
+  100% {
+    right: 17px;
+    position: relative;
+    font-size: 2em;
+  }
+}
+
+@-webkit-keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  overflow: hidden;
+  background-image: url(https://images.unsplash.com/photo-1489515217757-5fd1be406fef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-clip: content-box;
+  height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+
+body .loading-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  font-size: 3em;
+  background-color: #0D4480;
+  z-index: 199;
+  width: 100vw;
+  height: 100vh;
+}
+
+body .loading-page .spinner {
+  color: white;
+  position: relative;
+  -webkit-animation-name: spinning;
+          animation-name: spinning;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+body .only-title {
+  color: #0d4480;
+  font-size: 3em;
+}
+
+body .only-title i {
+  font-size: 2em;
+}
+
+body .only-title .sub-title {
+  background-color: #ffffffb0;
+  width: 300px;
+  margin: 0 auto;
+}
+
+body .btn {
+  border-radius: 0;
+}
+
+body .symbols {
+  background-color: #ffffff5e;
+  width: 300px;
+  margin: 0 auto;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+}
+
+body .card {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  border: none;
+  background-color: #00000000;
+  width: 300px;
+  min-width: 300px;
+  height: 50vh;
+  margin: auto;
+}
+
+body .card .result {
+  width: 300px;
+  padding-top: 1em;
+  display: none;
+  background-color: #ffffff91;
+  border-radius: 5%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 50vh;
+  visibility: hidden;
+  font-weight: bolder;
+}
+
+body .card .result .degree {
+  padding: 0;
+}
+
+body .card .result .name {
+  font-size: 1.8em;
+}
+
+body .card .result .name #name {
+  font-size: 1em;
+}
+
+body .card .result .temp {
+  font-size: 4em;
+}
+
+body .card .result .temp #temp {
+  padding-left: 14px;
+}
+
+body .card .result .min {
+  font-size: 1.4em;
+  padding-right: 10px;
+}
+
+body .card .result .max {
+  font-size: 1.4em;
+  padding-left: 10px;
+}
+
+body .card .result .max #max {
+  padding-left: 5px;
+}
+
+body .card .result .hum {
+  font-size: 1.4em;
+}
+
+body .card .result .hum #hum {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+body #error {
+  display: none;
+  font-size: 1.3em;
+  background-color: #ffffff78;
+  border-radius: 5px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+body #spinner {
+  margin: 0 auto;
+  -webkit-animation-name: spinning;
+          animation-name: spinning;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  position: absolute;
+  font-size: 10em;
+  top: 25%;
+  color: white;
+}
+
+body .input {
+  padding: 0;
+  width: 300px;
+  margin: 10% auto;
+  min-width: 300px;
+}
+
+body .input .btn-group {
+  margin: 0 auto;
+  width: 300px;
+}
+
+body .input input {
+  margin: 0 auto;
+  width: 300px;
+  height: 4em;
+  border: none;
+  border-radius: 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  text-align: center;
+  font-weight: bolder;
+  outline: none;
+  font-size: 1.4em;
+  background-color: #ffffffa1;
+  text-transform: capitalize;
+}
+
+body .input input::-webkit-input-placeholder {
+  color: #0D4480;
+  opacity: 1;
+}
+
+body .input input:-ms-input-placeholder {
+  color: #0D4480;
+  opacity: 1;
+}
+
+body .input input::-ms-input-placeholder {
+  color: #0D4480;
+  opacity: 1;
+}
+
+body .input input::placeholder {
+  color: #0D4480;
+  opacity: 1;
+}
+
+body .openweather {
+  color: white;
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  font-size: 0.5em;
+}
+
+.go-left {
+  -webkit-animation-name: go_left;
+          animation-name: go_left;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.come-from-right {
+  -webkit-animation-name: come_from_right;
+          animation-name: come_from_right;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.fa-cloud {
+  color: #2A2D2C;
+}
+
+.fade-out {
+  -webkit-animation-name: fade_out;
+          animation-name: fade_out;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+/*# sourceMappingURL=style.css.map */

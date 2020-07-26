@@ -10,7 +10,16 @@ import mood from './mood';
 
 (function main() {
   const inputField = document.getElementById('input');
+  const loadingPage = document.getElementsByClassName('loading-page')[0];
   let timeOut;
+
+  window.onload = () => {
+    loadingPage.className = 'loading-page fade-out';
+    setTimeout(() => {
+      loadingPage.style.display = 'none';
+    }, 1000);
+  };
+
 
   inputField.oninput = () => {
     clearTimeout(timeOut);
