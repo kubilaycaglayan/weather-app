@@ -135,7 +135,7 @@ body {
   background-position-y: 50%;
   background-position-x: 50%;
   background-clip: content-box;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
