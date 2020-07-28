@@ -49,6 +49,10 @@ After this command you may make changes and after every change run:
 
 - There is no automated tests for this project.
 
+### Future Features
+
+- Fully mobile compatible.
+
 ## Author
 
 👤 **Kubilay Caglayan**
