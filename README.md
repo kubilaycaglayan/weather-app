@@ -1,8 +1,8 @@
 # WEATHER APPLICATON
 
-You can learn the weather reports by typing the city.
-At the moment you finished with typing the engine takes over the job, sending a request to the Open Weather API, fetching the results and displaying them.
-These are all happening in async functions which are not affecting UX sustainability.
+You can learn weather reports by typing the city.
+At the moment you finished with typing the engine takes over the job, sending a request to the Open Weather API, fetching the results, and displaying them.
+These are all happening in async functions that are not affecting UX sustainability.
 
 ## Live Demo
 
