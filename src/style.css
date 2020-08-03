@@ -159,6 +159,17 @@ body .only-title .sub-title {
   margin: 0 auto;
 }
 
+body .only-title .result-group-for-small-screens {
+  height: 100px;
+  background-color: #ffffffb0;
+  font-size: 2rem;
+}
+
+body .only-title .result-group-for-small-screens .spinner-2 {
+  position: relative;
+  top: -20px;
+}
+
 body .btn {
   border-radius: 0;
 }
