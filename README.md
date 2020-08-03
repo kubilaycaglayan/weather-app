@@ -1,6 +1,8 @@
 # WEATHER APPLICATON
 
-You can learn the weather reports by typing the city.
+You can learn weather reports by typing the city.
+At the moment you finished with typing the engine takes over the job, sending a request to the Open Weather API, fetching the results, and displaying them.
+These are all happening in async functions that are not affecting UX sustainability.
 
 ## Live Demo
 
@@ -48,6 +50,10 @@ After this command you may make changes and after every change run:
 ### Run tests
 
 - There is no automated tests for this project.
+
+### Future Features
+
+- Fully mobile compatible.
 
 ## Author
 
