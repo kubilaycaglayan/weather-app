@@ -6,7 +6,7 @@ These are all happening in async functions that are not affecting UX sustainabil
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/kubilaycaglayan/weather-app/7005b893d1a36b916d0adaff6976155edcf4ef15/dist/index.html)
+[Live Demo Link](https://kc-weather.netlify.app/)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60448833/88192695-82f31580-cc45-11ea-896d-5c7ca3f0348d.gif">
