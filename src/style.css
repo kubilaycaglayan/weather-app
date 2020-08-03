@@ -193,6 +193,12 @@ body .card {
   margin: auto;
 }
 
+@media (max-width: 575px) {
+  body .card {
+    display: none !important;
+  }
+}
+
 body .card .result {
   width: 300px;
   padding-top: 1em;
