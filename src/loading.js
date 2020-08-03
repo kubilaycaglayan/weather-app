@@ -2,20 +2,22 @@
 const loading = () => {
   const spinners = document.getElementsByClassName('spinner-2');
   const card = document.getElementsByClassName('card')[0];
-  const result = document.getElementsByClassName('result')[0];
+  const results = document.getElementsByClassName('result');
 
   function show() {
     spinners[0].style.display = 'block';
     spinners[1].style.display = 'block';
     card.style.display = 'flex';
-    result.style.visibility = 'hidden';
+    results[0].style.visibility = 'hidden';
+    results[1].style.visibility = 'hidden';
   }
 
   function hide() {
     spinners[0].style.display = 'none';
     spinners[1].style.display = 'none';
     card.style.display = 'none';
-    result.style.visibility = 'visible';
+    results[0].style.visibility = 'visible';
+    results[1].style.visibility = 'visible';
   }
 
   return {

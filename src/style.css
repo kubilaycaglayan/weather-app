@@ -161,13 +161,19 @@ body .only-title .sub-title {
 
 body .only-title .result-group-for-small-screens {
   height: 100px;
-  background-color: #ffffffb0;
+  background-color: #ffffff69;
   font-size: 2rem;
+  position: relative;
+}
+
+body .only-title .result-group-for-small-screens .result {
+  visibility: hidden;
 }
 
 body .only-title .result-group-for-small-screens .spinner-2 {
-  position: relative;
-  top: -20px;
+  position: absolute;
+  top: 20px;
+  left: 128px;
 }
 
 body .btn {
