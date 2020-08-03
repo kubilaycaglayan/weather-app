@@ -2,28 +2,36 @@
   const fahrenheitButton = document.getElementById('fahrenheit');
   const celsiusButton = document.getElementById('celsius');
   const celsiusInput = document.getElementById('celsius-input');
-  const tempField = document.getElementById('temp');
-  const minField = document.getElementById('min');
-  const maxField = document.getElementById('max');
+  const tempField = document.getElementsByClassName('degree-result');
+  const minField = document.getElementsByClassName('min-result');
+  const maxField = document.getElementsByClassName('max-result');
 
   function getData() {
     return JSON.parse(localStorage.getItem('weatherSome'));
   }
 
   function setCelsius(data) {
-    tempField.innerHTML = data.temp;
-    minField.innerHTML = data.tempMin;
-    maxField.innerHTML = data.tempMax;
+    tempField[0].innerHTML = data.temp;
+    minField[0].innerHTML = data.tempMin;
+    maxField[0].innerHTML = data.tempMax;
+
+    tempField[1].innerHTML = data.temp;
+    minField[1].innerHTML = data.tempMin;
+    maxField[1].innerHTML = data.tempMax;
   }
 
   function setFahrenheit(data) {
-    tempField.innerHTML = data.fah;
-    minField.innerHTML = data.tempMinFah;
-    maxField.innerHTML = data.tempMaxFah;
+    tempField[0].innerHTML = data.fah;
+    minField[0].innerHTML = data.tempMinFah;
+    maxField[0].innerHTML = data.tempMaxFah;
+
+    tempField[1].innerHTML = data.fah;
+    minField[1].innerHTML = data.tempMinFah;
+    maxField[1].innerHTML = data.tempMaxFah;
   }
 
   function switchUnitIfExists(isCelsius, data) {
-    if (!parseInt(tempField.innerHTML, 10)) {
+    if (!parseInt(tempField[0].innerHTML, 10)) {
       return;
     }
     if (isCelsius) {

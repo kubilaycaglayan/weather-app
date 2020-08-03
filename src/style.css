@@ -130,7 +130,7 @@
 
 body {
   overflow: hidden;
-  background-image: url(https://images.unsplash.com/photo-1489515217757-5fd1be406fef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-image: url(https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
   background-size: cover;
   background-position-y: 50%;
   background-position-x: 50%;
@@ -196,7 +196,15 @@ body .card {
 body .card .result {
   width: 300px;
   padding-top: 1em;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: #ffffff91;
   border-radius: 5%;
   -webkit-user-select: none;
@@ -216,15 +224,15 @@ body .card .result .name {
   font-size: 1.8em;
 }
 
-body .card .result .name #name {
+body .card .result .name .name-result {
   font-size: 1em;
 }
 
 body .card .result .temp {
-  font-size: 4em;
+  font-size: 4rem;
 }
 
-body .card .result .temp #temp {
+body .card .result .temp .temp-result {
   padding-left: 14px;
 }
 
@@ -238,7 +246,7 @@ body .card .result .max {
   padding-left: 10px;
 }
 
-body .card .result .max #max {
+body .card .result .max .max-result {
   padding-left: 5px;
 }
 
@@ -246,7 +254,7 @@ body .card .result .hum {
   font-size: 1.4em;
 }
 
-body .card .result .hum #hum {
+body .card .result .hum .hum-result {
   padding-right: 5px;
   padding-left: 5px;
 }
@@ -260,7 +268,7 @@ body #error {
   margin: 0 auto;
 }
 
-body #spinner {
+body .spinner-2 {
   margin: 0 auto;
   -webkit-animation-name: spinning;
           animation-name: spinning;

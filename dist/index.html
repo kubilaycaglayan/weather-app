@@ -27,6 +27,16 @@
           <div class="sub-title">
             <h2 class="mb-0">Weather Report</h2>
           </div>
+          <div class="result-group-for-small-screens d-block d-sm-none">
+            <div class="name"><i class="far fa-flag"></i> <span class="name-result">San Francisco Province</span></div>
+            <div class="temp"> <span class="temp" ></span> <span class="degree-result">°</span> </div>
+            <div class="range d-flex justify-content-center">
+              <div class="min"><i class="fas fa-angle-down"></i> <span class="min-result"></span> <span class="degree">°</span> </div>
+              <div class="max"> <i class="fas fa-angle-up"></i><span class="max-result"></span> <span class="degree">°</span> </div>
+            </div>
+            <div class="weather"><span class="weather-result"></span></div>
+            <div class="hum"><i class="fas fa-tint"></i><span class="hum-result"></span><i class="fas fa-percentage"></i> </div>
+          </div>
         </div>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label id="celsius" class="btn btn-primary active">
@@ -39,20 +49,20 @@
         <input id="input" type="text"  placeholder="Please enter city name..." spellcheck="false" autocomplete="off">
       </div>
 
-      <div class="card col-md-6">
-          <div class="result d-flex flex-column justify-content-around">
-            <div class="name"><i class="far fa-flag"></i> <span id="name">San Francisco Province</span></div>
-            <div class="temp"> <span id="temp" ></span> <span class="degree">°</span> </div>
+      <div class="card col-md-6 right-bar">
+          <div class="result">
+            <div class="name"><i class="far fa-flag"></i> <span class="name-result">San Francisco Province</span></div>
+            <div class="temp"> <span class="temp" ></span> <span class="degree-result">°</span> </div>
             <div class="range d-flex justify-content-center">
-              <div class="min"><i class="fas fa-angle-down"></i> <span id="min"></span> <span class="degree">°</span> </div>
-              <div class="max"> <i class="fas fa-angle-up"></i><span id="max"></span> <span class="degree">°</span> </div>
+              <div class="min"><i class="fas fa-angle-down"></i> <span class="min-result"></span> <span class="degree">°</span> </div>
+              <div class="max"> <i class="fas fa-angle-up"></i><span class="max-result"></span> <span class="degree">°</span> </div>
             </div>
-            <div class="weather"><span id="weather"></span></div>
-            <div class="hum"><i class="fas fa-tint"></i><span id="hum"></span><i class="fas fa-percentage"></i> </div>
+            <div class="weather"><span class="weather-result"></span></div>
+            <div class="hum"><i class="fas fa-tint"></i><span class="hum-result"></span><i class="fas fa-percentage"></i> </div>
 
           </div>
 
-          <i id="spinner" class="far fa-snowflake"></i>
+          <i class="spinner-2 far fa-snowflake"></i>
       </div>
     </div>
     <div class="openweather">Powered by OpenWeather</div>

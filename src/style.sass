@@ -43,7 +43,7 @@
 
 body
   overflow: hidden
-  background-image: url(https://images.unsplash.com/photo-1489515217757-5fd1be406fef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)
+  background-image: url(https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)
   background-size: cover
   background-position-y: 50%
   background-position-x: 50%
@@ -86,7 +86,9 @@ body
     .result
       width: 300px
       padding-top: 1em
-      display: none
+      display: flex
+      flex-direction: column
+      justify-content: space-around
       background-color: #ffffff91
       border-radius: 5%
       user-select: none
@@ -97,11 +99,11 @@ body
         padding: 0
       .name
         font-size: 1.8em
-        #name
+        .name-result
           font-size: 1em
       .temp
-        font-size: 4em
-        #temp
+        font-size: 4rem
+        .temp-result
           padding-left: 14px
       .min
         font-size: 1.4em
@@ -109,11 +111,11 @@ body
       .max
         font-size: 1.4em
         padding-left: 10px
-        #max
+        .max-result
           padding-left: 5px
       .hum
         font-size: 1.4em
-        #hum
+        .hum-result
           padding-right: 5px
           padding-left: 5px
   #error
@@ -123,7 +125,7 @@ body
     border-radius: 5px
     width: 300px
     margin: 0 auto
-  #spinner
+  .spinner-2
     margin: 0 auto
     animation-name: spinning
     animation-duration: 2s

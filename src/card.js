@@ -1,10 +1,10 @@
 const card = () => {
-  const nameField = document.getElementById('name');
-  const tempField = document.getElementById('temp');
-  const minField = document.getElementById('min');
-  const maxField = document.getElementById('max');
-  const weatherField = document.getElementById('weather');
-  const humField = document.getElementById('hum');
+  const nameField = document.getElementsByClassName('name-result');
+  const tempField = document.getElementsByClassName('degree-result');
+  const minField = document.getElementsByClassName('min-result');
+  const maxField = document.getElementsByClassName('max-result');
+  const weatherField = document.getElementsByClassName('weather-result');
+  const humField = document.getElementsByClassName('hum-result');
   const celsiusInput = document.getElementById('celsius-input');
   const card = document.getElementsByClassName('card')[0];
   const result = document.getElementsByClassName('result')[0];
@@ -24,18 +24,25 @@ const card = () => {
   }
 
   function fill(temp, tempMin, tempMax, humidity, weather) {
-    tempField.innerHTML = temp;
-    minField.innerHTML = tempMin;
-    maxField.innerHTML = tempMax;
-    weatherField.innerHTML = weather;
-    humField.innerHTML = humidity;
+    tempField[0].innerHTML = temp;
+    minField[0].innerHTML = tempMin;
+    maxField[0].innerHTML = tempMax;
+    weatherField[0].innerHTML = weather;
+    humField[0].innerHTML = humidity;
+
+    tempField[1].innerHTML = temp;
+    minField[1].innerHTML = tempMin;
+    maxField[1].innerHTML = tempMax;
+    weatherField[1].innerHTML = weather;
+    humField[1].innerHTML = humidity;
   }
 
   function populate() {
     const {
       name, temp, fah, tempMin, tempMinFah, tempMax, tempMaxFah, humidity, weather,
     } = getData();
-    nameField.innerHTML = name;
+    nameField[0].innerHTML = name;
+    nameField[1].innerHTML = name;
     if (celsiusInput.checked) {
       fill(temp, tempMin, tempMax, humidity, weather);
     } else {
