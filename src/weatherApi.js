@@ -1,6 +1,7 @@
-const weather = async function weather(cityName = 'Ankara') {
+const weather = function weather(cityName = 'Ankara') {
   const key = 'e6efdefd05fcd6a7ba813bc6ce304518';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`;
+
   const data = {};
 
   const destructure = (result) => {
@@ -20,19 +21,22 @@ const weather = async function weather(cityName = 'Ankara') {
     data.coord = result.coord;
   };
 
-  await fetch(url)
+  // npm install node-fetch
+  // const fetch = require('node-fetch')
+
+  return fetch(url)
     .then(
       (response) => response.json(),
     )
     .then(
       (response) => {
         destructure(response);
+        return data;
       },
+    )
+    .catch(
+      // handle error
     );
-
-  localStorage.setItem('weatherSome', JSON.stringify(data));
-  return data;
 };
-
 
 export default weather;

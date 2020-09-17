@@ -37,10 +37,10 @@ const card = () => {
     humField[1].innerHTML = humidity;
   }
 
-  function populate() {
+  function populate(response) {
     const {
       name, temp, fah, tempMin, tempMinFah, tempMax, tempMaxFah, humidity, weather,
-    } = getData();
+    } = response;
     nameField[0].innerHTML = name;
     nameField[1].innerHTML = name;
     if (celsiusInput.checked) {

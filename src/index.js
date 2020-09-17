@@ -47,14 +47,14 @@ import mood from './mood';
     }
   }
 
-  async function showWeather(inputValue) {
-    await weather(inputValue)
+  function showWeather(inputValue) {
+    weather(inputValue)
       .then(
         (response) => {
           mood().decide(response.weather);
           errorMessage().hide();
           loading().hide();
-          card().populate();
+          card().populate(response);
         },
       )
       .catch(
